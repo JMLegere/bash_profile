@@ -65,7 +65,7 @@
     alias cdrepos='cd ~/Workspace/git'
 
 ##   lr:  Full Recursive Directory Listing
-alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'' | less'
+    alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\'' -e '\''s/^/   /'\'' -e '\''s/-/|/'\'' | less'
 
 ##   mans:   Search manpage given in agument '1' for term given in argument '2' (case insensitive)
 ##           displays paginated result with colored search terms and two lines surrounding each hit.             Example: mans mplayer codec
@@ -79,11 +79,11 @@ alias lr='ls -R | grep ":$" | sed -e '\''s/:$//'\'' -e '\''s/[^-][^\/]*\//--/g'\
 
 #   3.  FILE AND FOLDER MANAGEMENT
 
-zipf () { zip -r "$1".zip "$1" ; }          # zipf:         To create a ZIP archive of a folder
-alias numFiles='echo $(ls -1 | wc -l)'      # numFiles:     Count of non-hidden files in current dir
-alias make1mb='mkfile 1m ./1MB.dat'         # make1mb:      Creates a file of 1mb size (all zeros)
-alias make5mb='mkfile 5m ./5MB.dat'         # make5mb:      Creates a file of 5mb size (all zeros)
-alias make10mb='mkfile 10m ./10MB.dat'      # make10mb:     Creates a file of 10mb size (all zeros)
+    zipf () { zip -r "$1".zip "$1" ; }          # zipf:         To create a ZIP archive of a folder
+    alias numFiles='echo $(ls -1 | wc -l)'      # numFiles:     Count of non-hidden files in current dir
+    alias make1mb='mkfile 1m ./1MB.dat'         # make1mb:      Creates a file of 1mb size (all zeros)
+    alias make5mb='mkfile 5m ./5MB.dat'         # make5mb:      Creates a file of 5mb size (all zeros)
+    alias make10mb='mkfile 10m ./10MB.dat'      # make10mb:     Creates a file of 10mb size (all zeros)
 
 ##   cdf:  'Cd's to frontmost window of MacOS Finder
     cdf () {
@@ -127,10 +127,10 @@ EOT
 
 #   4.  SEARCHING
 
-alias qfind="find . -name "                 # qfind:    Quickly search for file
-ff () { /usr/bin/find . -name "$@" ; }      # ff:       Find file under the current directory
-ffs () { /usr/bin/find . -name "$@"'*' ; }  # ffs:      Find file whose name starts with a given string
-ffe () { /usr/bin/find . -name '*'"$@" ; }  # ffe:      Find file whose name ends with a given string
+    alias qfind="find . -name "                 # qfind:    Quickly search for file
+    ff () { /usr/bin/find . -name "$@" ; }      # ff:       Find file under the current directory
+    ffs () { /usr/bin/find . -name "$@"'*' ; }  # ffs:      Find file whose name starts with a given string
+    ffe () { /usr/bin/find . -name '*'"$@" ; }  # ffe:      Find file whose name ends with a given string
 
 ##   spotlight: Search for a file using MacOS Spotlight's metadata
     spotlight () { mdfind "kMDItemDisplayName == '$@'wc"; }
@@ -165,16 +165,16 @@ ffe () { /usr/bin/find . -name '*'"$@" ; }  # ffe:      Find file whose name end
 
 #   6.  NETWORKING
 
-alias myip='curl ip.appspot.com'                    # myip:         Public facing IP Address
-alias netCons='lsof -i'                             # netCons:      Show all open TCP/IP sockets
-alias flushDNS='dscacheutil -flushcache'            # flushDNS:     Flush out the DNS Cache
-alias lsock='sudo /usr/sbin/lsof -i -P'             # lsock:        Display open sockets
-alias lsockU='sudo /usr/sbin/lsof -nP | grep UDP'   # lsockU:       Display only open UDP sockets
-alias lsockT='sudo /usr/sbin/lsof -nP | grep TCP'   # lsockT:       Display only open TCP sockets
-alias ipInfo0='ipconfig getpacket en0'              # ipInfo0:      Get info on connections for en0
-alias ipInfo1='ipconfig getpacket en1'              # ipInfo1:      Get info on connections for en1
-alias openPorts='sudo lsof -i | grep LISTEN'        # openPorts:    All listening connections
-alias showBlocked='sudo ipfw list'                  # showBlocked:  All ipfw rules inc/ blocked IPs
+    alias myip='curl ip.appspot.com'                    # myip:         Public facing IP Address
+    alias netCons='lsof -i'                             # netCons:      Show all open TCP/IP sockets
+    alias flushDNS='dscacheutil -flushcache'            # flushDNS:     Flush out the DNS Cache
+    alias lsock='sudo /usr/sbin/lsof -i -P'             # lsock:        Display open sockets
+    alias lsockU='sudo /usr/sbin/lsof -nP | grep UDP'   # lsockU:       Display only open UDP sockets
+    alias lsockT='sudo /usr/sbin/lsof -nP | grep TCP'   # lsockT:       Display only open TCP sockets
+    alias ipInfo0='ipconfig getpacket en0'              # ipInfo0:      Get info on connections for en0
+    alias ipInfo1='ipconfig getpacket en1'              # ipInfo1:      Get info on connections for en1
+    alias openPorts='sudo lsof -i | grep LISTEN'        # openPorts:    All listening connections
+    alias showBlocked='sudo ipfw list'                  # showBlocked:  All ipfw rules inc/ blocked IPs
 
 ##   ii:  display useful host related informaton
     ii() {
@@ -192,7 +192,7 @@ alias showBlocked='sudo ipfw list'                  # showBlocked:  All ipfw rul
 
 #   7.  SYSTEMS OPERATIONS & INFORMATION
 
-alias mountReadWrite='/sbin/mount -uw /'    # mountReadWrite:   For use when booted into single-user
+    alias mountReadWrite='/sbin/mount -uw /'    # mountReadWrite:   For use when booted into single-user
 
 ##   cleanupDS:  Recursively delete .DS_Store files
     alias cleanupDS="find . -type f -name '*.DS_Store' -ls -delete"
@@ -210,12 +210,12 @@ alias mountReadWrite='/sbin/mount -uw /'    # mountReadWrite:   For use when boo
 
 #   8.  WEB DEVELOPMENT
 
-alias apacheEdit='sudo edit /etc/httpd/httpd.conf'      # apacheEdit:       Edit httpd.conf
-alias apacheRestart='sudo apachectl graceful'           # apacheRestart:    Restart Apache
-alias editHosts='sudo edit /etc/hosts'                  # editHosts:        Edit /etc/hosts file
-alias herr='tail /var/log/httpd/error_log'              # herr:             Tails HTTP error logs
-alias apacheLogs="less +F /var/log/apache2/error_log"   # Apachelogs:   Shows apache error logs
-httpHeaders () { /usr/bin/curl -I -L $@ ; }             # httpHeaders:      Grabs headers from web page
+    alias apacheEdit='sudo edit /etc/httpd/httpd.conf'      # apacheEdit:       Edit httpd.conf
+    alias apacheRestart='sudo apachectl graceful'           # apacheRestart:    Restart Apache
+    alias editHosts='sudo edit /etc/hosts'                  # editHosts:        Edit /etc/hosts file
+    alias herr='tail /var/log/httpd/error_log'              # herr:             Tails HTTP error logs
+    alias apacheLogs="less +F /var/log/apache2/error_log"   # Apachelogs:   Shows apache error logs
+    httpHeaders () { /usr/bin/curl -I -L $@ ; }             # httpHeaders:      Grabs headers from web page
 
 ##   httpDebug:  Download a web page and show info on what took time
     httpDebug () { /usr/bin/curl $@ -o /dev/null -w "dns: %{time_namelookup} connect: %{time_connect} pretransfer: %{time_pretransfer} starttransfer: %{time_starttransfer} total: %{time_total}\n" ; }
