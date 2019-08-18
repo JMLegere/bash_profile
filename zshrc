@@ -142,3 +142,6 @@ EOT
         cd "$currFolderPath"
     }
 
+
+# added by travis gem
+[ -f /Users/jeremylegere/.travis/travis.sh ] && source /Users/jeremylegere/.travis/travis.sh
